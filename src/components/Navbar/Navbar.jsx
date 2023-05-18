@@ -6,12 +6,12 @@ import { AuthContext } from '../Provider/AuthProvider';
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext)
 
-    const hanldeLogOut = () =>{
+    const hanldeLogOut = () => {
         logOut()
-        .then()
-        .catch(error =>{
-            console.log(error.message)
-        })
+            .then()
+            .catch(error => {
+                console.log(error.message)
+            })
     }
 
     return (
@@ -23,21 +23,32 @@ const Navbar = () => {
                 </div>
                 <div className='flex-1'>
                     <Link className='px-3 hover:text-purple-700 hover:duration-700 text-xl font-semibold' to="/">Home</Link>
-                    <Link className='px-3 hover:text-purple-700 hover:duration-700 text-xl font-semibold' to="/alltoys">All Toys</Link>
+                    <Link className='px-3 hover:text-purple-700 hover:duration-700 text-xl font-semibold' to="/allToys">All Toys</Link>
+
                     <Link className='px-3 hover:text-purple-700 hover:duration-700 text-xl font-semibold' to="/blog">Blogs</Link>
+
+                    {
+                        user && <>
+                            <Link className='px-3 hover:text-purple-700 hover:duration-700 text-xl font-semibold' to="/addToys">Add Toys</Link>
+
+                            <Link className='px-3 hover:text-purple-700 hover:duration-700 text-xl font-semibold' to="/myToys">My Toys</Link>
+                        </>
+                    }
+
+
 
                     {/* daynamic toggle button */}
 
                     {
-                        user ? <button onClick={hanldeLogOut} className='btn btn-primary'>LogOut</button> : 
-                        <Link to="/login"><button className="btn btn-primary">Login</button></Link>
+                        user ? <button onClick={hanldeLogOut} className='btn btn-primary'>LogOut</button> :
+                            <Link to="/login"><button className="btn btn-primary">Login</button></Link>
                     }
-                        
+
 
                 </div>
                 <div className="flex-none">
                     {
-                        user && <div className=''>
+                        user && <div className='tooltip tooltip-left' data-tip={user.displayName}>
                             <img className='w-12 rounded-full' src={user.photoURL} alt="" />
                         </div>
                     }
