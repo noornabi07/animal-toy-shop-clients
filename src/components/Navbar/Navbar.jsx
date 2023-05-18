@@ -4,7 +4,16 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 
 const Navbar = () => {
-    const {user} = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext)
+
+    const hanldeLogOut = () =>{
+        logOut()
+        .then()
+        .catch(error =>{
+            console.log(error.message)
+        })
+    }
+
     return (
         <div className=''>
             <div className="navbar bg-teal-600	 text-white px-20">
@@ -16,15 +25,22 @@ const Navbar = () => {
                     <Link className='px-3 hover:text-purple-700 hover:duration-700 text-xl font-semibold' to="/">Home</Link>
                     <Link className='px-3 hover:text-purple-700 hover:duration-700 text-xl font-semibold' to="/alltoys">All Toys</Link>
                     <Link className='px-3 hover:text-purple-700 hover:duration-700 text-xl font-semibold' to="/blog">Blogs</Link>
-                    <Link to="/login"><button className="btn btn-primary">Login</button></Link>
+
+                    {/* daynamic toggle button */}
+
+                    {
+                        user ? <button onClick={hanldeLogOut} className='btn btn-primary'>LogOut</button> : 
+                        <Link to="/login"><button className="btn btn-primary">Login</button></Link>
+                    }
+                        
+
                 </div>
                 <div className="flex-none">
-                <p className='mr-3'>{user?.name}</p>
-                    <div className="dropdown dropdown-end">
-                            <div className="w-10 rounded-full">  
-                                <img className='rounded-full' src={logo} />
-                            </div>
-                    </div>
+                    {
+                        user && <div className=''>
+                            <img className='w-12 rounded-full' src={user.photoURL} alt="" />
+                        </div>
+                    }
                 </div>
             </div>
         </div>
