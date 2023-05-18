@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import logo from '../../../public/animal-2.png'
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../Provider/AuthProvider';
 
 const Navbar = () => {
+    const {user} = useContext(AuthContext)
     return (
         <div className=''>
             <div className="navbar bg-teal-600	 text-white px-20">
@@ -17,7 +19,7 @@ const Navbar = () => {
                     <Link to="/login"><button className="btn btn-primary">Login</button></Link>
                 </div>
                 <div className="flex-none">
-                <p className='mr-3'>Name</p>
+                <p className='mr-3'>{user?.name}</p>
                     <div className="dropdown dropdown-end">
                             <div className="w-10 rounded-full">  
                                 <img className='rounded-full' src={logo} />
