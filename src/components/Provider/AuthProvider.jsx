@@ -13,24 +13,29 @@ const AuthProvider = ({children}) => {
     const googleProvider = new GoogleAuthProvider();
 
     const createUser = (email, password) =>{
+        setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password);
     } 
 
     const signIn = (email, password) =>{
+        setLoading(true)
         return signInWithEmailAndPassword(auth, email, password);
     }
 
     const signInGoogle = () =>{
+        setLoading(true)
        return signInWithPopup(auth, googleProvider)
     }
 
     const updateProfileNamePhoto = (user, name, photo) =>{
+        setLoading(true)
         return updateProfile(user, {
             displayName: name, photoURL: photo
         })
     }
 
     const logOut = () =>{
+        setLoading(true)
         return signOut(auth);
     }
 
@@ -38,6 +43,7 @@ const AuthProvider = ({children}) => {
        const unsubscribe = onAuthStateChanged(auth, loggedUser =>{
             // console.log(loggedUser);
             setUser(loggedUser);
+            setLoading(false)
         })
 
         return () => {
@@ -47,6 +53,7 @@ const AuthProvider = ({children}) => {
 
     const authInfo = {
         user,
+        loading,
         createUser,
         signIn,
         signInGoogle,

@@ -22,35 +22,74 @@ const MyToys = () => {
             <div className="overflow-x-auto">
                 <table className="table w-full">
                     {/* head */}
-                    <thead>
+                    <thead className='font-bold text-red-600'>
                         <tr>
+                            <th className='text-green-500'>No</th>
                             <th>Name</th>
                             <th>Toy Name</th>
                             <th>Sub Category</th>
                             <th>Available Quantity</th>
-                            <th>Details</th>
-                            <th>Details</th>
+                            <th>Update</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
 
                         {
-                            myToys.map(toy => <tr
+                            myToys.map((toy, index) => <tr
                                 key={toy._id}
-                            >
+                            >   <td className='text-green-500 font-bold'>{index + 1}</td>
                                 <td>{toy.sellerName}</td>
                                 <td>{toy.toyName}</td>
                                 <td>{toy.subCategory}</td>
                                 <td>{toy.quantity}</td>
-                                <Link to="/viewDetails">
-                                    <button className="btn btn-sm bg-teal-600 mt-3">Small</button>
-                                </Link>
+                                <td>
+
+                                    <label htmlFor="my-modal" className="btn btn-sm  mt-3 p-2">
+                                        Update
+                                    </label>
+                                </td>
+                                <td>
+                                    <button className="btn btn-sm bg-red-600 mt-3">Delete</button>
+                                </td>
                             </tr>)
                         }
 
                     </tbody>
                 </table>
             </div>
+
+            {/* modal */}
+
+            {/* Put this part before </body> tag */}
+            <input type="checkbox" id="my-modal" className="modal-toggle" />
+            <div className="modal">
+                <div className="modal-box">
+                    <h3 className="font-bold text-xl text-center mb-4 text-teal-600">Update Your Add Toy Info</h3>
+                    <form>
+                        <div>
+                            <div className='flex gap-3 mb-3'>
+                                <div>
+                                    <label className='font-bold text-red-500'>Price</label>
+                                    <input type="text" placeholder="Update Price" className="input input-bordered input-primary w-full max-w-xs" />
+                                </div>
+                                <div>
+                                    <label className='font-bold text-red-500'>Quantity</label>
+                                    <input type="text" placeholder="New Quantity" className="input input-bordered input-primary w-full max-w-xs" />
+                                </div>
+                            </div>
+                            <label className='font-bold text-red-500'>Details</label>
+                            <input type="text" placeholder="Message" className="input input-bordered input-primary w-full" />
+
+                        </div>
+                        <div className="modal-action">
+                            <label htmlFor="my-modal" className="btn">Yay!</label>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
         </div>
     );
 };

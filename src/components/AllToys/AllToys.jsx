@@ -3,14 +3,24 @@ import { Link } from 'react-router-dom';
 
 const AllToys = () => {
     const [allToys, setAllToys] = useState([]);
+    const [search, setSearch] = useState("")
 
-    useEffect( () =>{
+    useEffect(() => {
         fetch('http://localhost:5000/allToys')
+            .then(res => res.json())
+            .then(data => {
+                setAllToys(data);
+            })
+    }, [])
+
+
+    const handleSearch = () => {
+        fetch(`http://localhost:5000/searchByToyName/${search}`)
         .then(res => res.json())
         .then(data => {
-            setAllToys(data);
+            setAllToys(data)
         })
-    }, [])
+    }
 
 
     return (
@@ -19,8 +29,8 @@ const AllToys = () => {
                 <h2 className='font-bold text-4xl text-teal-500 text-center mb-7'>All <span className='text-red-500'>Toys</span> Shop</h2>
 
                 <div className='text-center mb-5'>
-                    <input type="text" placeholder="Type here" className="input input-bordered input-info w-full max-w-xs" />
-                    <button className="btn ml-2 btn-primary bg-green-600 max-w-xs">Search</button>
+                    <input onChange={(e) => setSearch(e.target.value)} type="text" placeholder="Type here" className="input input-bordered input-info w-full max-w-xs" />
+                    <button onClick={handleSearch} className="btn ml-2 btn-primary bg-green-600 max-w-xs">Search</button>
                 </div>
 
                 <div className="overflow-x-auto">
@@ -36,19 +46,19 @@ const AllToys = () => {
                             </tr>
                         </thead>
                         <tbody>
-                        {
-                            allToys.map(toy => <tr
-                                key={toy._id}
-                            >   
-                                <td className='text-red-500'>{toy.sellerName}</td>
-                                <td>{toy.toyName}</td>
-                                <td>{toy.subCategory}</td>
-                                <td>{toy.quantity}</td>
-                                <Link to={`/details/${toy._id}`}>
-                                    <button className="btn btn-sm bg-teal-600 mt-3">View Details</button>
-                                </Link>
-                            </tr>)
-                        }
+                            {
+                                allToys.map(toy => <tr
+                                    key={toy._id}
+                                >
+                                    <td className='text-red-500'>{toy.sellerName}</td>
+                                    <td>{toy.toyName}</td>
+                                    <td>{toy.subCategory}</td>
+                                    <td>{toy.quantity}</td>
+                                    <Link to={`/details/${toy._id}`}>
+                                        <button className="btn btn-sm bg-teal-600 mt-3">View Details</button>
+                                    </Link>
+                                </tr>)
+                            }
                         </tbody>
                     </table>
                 </div>

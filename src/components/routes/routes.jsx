@@ -9,11 +9,14 @@ import AddToys from "../AddToys/AddToys";
 import MyToys from "../MyToys/MyToys";
 import AllToys from "../AllToys/AllToys";
 import Details from "../Details/Details";
+import ErrorPage from "../ErrorPage/ErrorPage";
+import PrivetRoutes from "./PrivetRoutes";
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
@@ -33,11 +36,11 @@ const router = createBrowserRouter([
             },
             {
                 path: '/addToys',
-                element: <AddToys></AddToys>
+                element: <PrivetRoutes><AddToys></AddToys></PrivetRoutes>
             },
             {
                 path: '/myToys',
-                element: <MyToys></MyToys>
+                element: <PrivetRoutes><MyToys></MyToys></PrivetRoutes>
             },
             {
                 path: '/allToys',

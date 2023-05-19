@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaBeer, FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../Provider/AuthProvider';
 
@@ -8,6 +8,10 @@ const Login = () => {
     const [error, setError] = useState('')
 
     const {signIn, signInGoogle} = useContext(AuthContext);
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
     const handleLogin = event =>{
         event.preventDefault();
@@ -24,6 +28,7 @@ const Login = () => {
             setError('')
             event.target.reset();
             setSuccess('Success Login Account')
+            navigate(from)
         })
         .catch(error => {
             setError(error.message);
@@ -37,6 +42,7 @@ const Login = () => {
             console.log(loggedUser)
             setError('')
             setSuccess('Success Login Account');
+            navigate(from)
 
         })
         .catch(error =>{

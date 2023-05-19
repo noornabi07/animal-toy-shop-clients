@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../Provider/AuthProvider';
+import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 const Toys = ({ toy }) => {
-    // console.log(toy)
-    const { photo, price, rating, toyName } = toy;
+    const { user } = useContext(AuthContext)
+    const { photo, price, rating, toyName, _id } = toy;
+
+
     return (
         <div>
             <div className="card w-96 bg-teal-500 border-2">
@@ -17,7 +22,9 @@ const Toys = ({ toy }) => {
                             <p className='mb-4'><span className='font-bold text-xl text-white'>Rating:</span> <span className='text-red-500 font-semibold'>{rating}</span></p>
                         </div>
                         <div className="card-actions">
-                            <button className="btn btn-primary bg-blue-700	">View Details</button>
+                            <Link to="">
+                                <button className="btn btn-primary bg-blue-700	">View Details</button>
+                            </Link>
                         </div>
                     </div>
                 </div>

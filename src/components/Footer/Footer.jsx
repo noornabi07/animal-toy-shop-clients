@@ -26,16 +26,16 @@ const Footer = () => {
                 </div>
                 <div>
                     <span className="footer-title">Legal</span>
-                    <a className="link link-hover">
+                    <a className="link link-hover" href='https://www.facebook.com/mdnoornabiislamNK' target='_blank'>
                         <FaFacebook className='text-3xl hover:rotate-45 hover:duration-500'></FaFacebook>
                     </a>
-                    <a className="link link-hover">
+                    <a className="link link-hover" href='https://twitter.com/MDNurna56749656' target='_blank'>
                         <FaTwitter className='text-3xl hover:rotate-45 hover:duration-500'></FaTwitter>
                     </a>
-                    <a className="link link-hover">
+                    <a className="link link-hover" href='https://www.instagram.com/musicpromoter33/' target='_blank'>
                         <FaInstagram className='text-3xl hover:rotate-45 hover:duration-500'></FaInstagram>
                     </a>
-                    <a className="link link-hover">
+                    <a className="link link-hover" href='https://github.com/noornabi07' target='_blank'>
                         <FaGithub className='text-3xl hover:rotate-45 hover:duration-500'></FaGithub>
                     </a>
                 </div>
