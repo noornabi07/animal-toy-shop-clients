@@ -19,11 +19,6 @@ const MyToys = () => {
         <div className='px-20 my-20'>
             <h2 className='font-bold text-4xl text-teal-500 text-center mb-7'>All <span className='text-red-500'>My</span> Toys</h2>
 
-            <div className='text-center mb-5'>
-                <input type="text" placeholder="Type here" className="input input-bordered input-info w-full max-w-xs" />
-                <button className="btn ml-2 btn-primary bg-green-600 max-w-xs">Search</button>
-            </div>
-
             <div className="overflow-x-auto">
                 <table className="table w-full">
                     {/* head */}
@@ -33,6 +28,7 @@ const MyToys = () => {
                             <th>Toy Name</th>
                             <th>Sub Category</th>
                             <th>Available Quantity</th>
+                            <th>Details</th>
                             <th>Details</th>
                         </tr>
                     </thead>

@@ -17,7 +17,7 @@ const Toys = ({ toy }) => {
                             <p className='mb-4'><span className='font-bold text-xl text-white'>Rating:</span> <span className='text-red-500 font-semibold'>{rating}</span></p>
                         </div>
                         <div className="card-actions">
-                            <button className="btn btn-primary">View Details</button>
+                            <button className="btn btn-primary bg-blue-700	">View Details</button>
                         </div>
                     </div>
                 </div>

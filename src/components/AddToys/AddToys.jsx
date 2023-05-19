@@ -83,7 +83,7 @@ const AddToys = () => {
                                     <span className="font-semibold text-green-600">Sub Category</span>
                                 </label>
                                 <select type="text" name='subCategory' className="input input-bordered">
-                                    <option value="teddy bear">teddy bear</option>
+                                    <option value="teddy">teddy</option>
                                     <option value="hors">hors</option>
                                     <option value="cat">cat</option>
                                 </select>
