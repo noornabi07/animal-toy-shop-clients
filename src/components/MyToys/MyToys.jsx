@@ -60,11 +60,14 @@ const MyToys = () => {
                     {/* head */}
                     <thead className='font-bold text-red-600'>
                         <tr>
-                            <th className='text-green-500'>No</th>
-                            <th>Name</th>
+                            <th>No</th>
+                            <th>Name</th>             
+                            <th>Email</th>
                             <th>Toy Name</th>
                             <th>Sub Category</th>
-                            <th>Available Quantity</th>
+                            <th>Price</th>
+                            <th>Rating</th>
+                            <th>Quantity</th>
                             <th>Update</th>
                             <th>Delete</th>
                         </tr>

@@ -42,7 +42,8 @@ const AllToys = () => {
                                 <th>Name</th>
                                 <th>Toy Name</th>
                                 <th>Sub Category</th>
-                                <th>Available Quantity</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
                                 <th>Details</th>
                             </tr>
                         </thead>
@@ -51,10 +52,11 @@ const AllToys = () => {
                                 allToys.map((toy, index)=> <tr
                                     key={toy._id}
                                 >
-                                    <td>{index+1}</td>
-                                    <td className='text-red-500'>{toy.sellerName}</td>
+                                    <td className='text-green-500 font-bold'>{index+1}</td>
+                                    <td className='text-purple-500'>{toy.sellerName}</td>
                                     <td>{toy.toyName}</td>
                                     <td>{toy.subCategory}</td>
+                                    <td>{toy.price}</td>
                                     <td>{toy.quantity}</td>
                                     <Link to={`/details/${toy._id}`}>
                                         <button className="btn btn-sm bg-teal-600 mt-3">View Details</button>

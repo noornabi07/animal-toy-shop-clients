@@ -5,7 +5,7 @@ import { FaBeer, FaFacebook, FaGithub, FaGoogle, FaInstagram, FaLocationArrow, F
 const Footer = () => {
     return (
         <div>
-            <footer className="footer p-10 bg-teal-600 text-white">
+            <footer className="footer p-10 mt-10 bg-teal-600 text-white">
                 <div>
                     <img className='w-40 rounded-full' src={logo} alt="" />
                     <p className='font-semibold'>Animal Toys Shop.<br />Providing reliable tech since 2023</p>
