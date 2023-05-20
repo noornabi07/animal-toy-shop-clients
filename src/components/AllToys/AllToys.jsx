@@ -38,6 +38,7 @@ const AllToys = () => {
                         {/* head */}
                         <thead className='font-bold text-cyan-600 text-xl'>
                             <tr>
+                                <th>Serial</th>
                                 <th>Name</th>
                                 <th>Toy Name</th>
                                 <th>Sub Category</th>
@@ -47,9 +48,10 @@ const AllToys = () => {
                         </thead>
                         <tbody>
                             {
-                                allToys.map(toy => <tr
+                                allToys.map((toy, index)=> <tr
                                     key={toy._id}
                                 >
+                                    <td>{index+1}</td>
                                     <td className='text-red-500'>{toy.sellerName}</td>
                                     <td>{toy.toyName}</td>
                                     <td>{toy.subCategory}</td>

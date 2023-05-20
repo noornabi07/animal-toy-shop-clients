@@ -35,26 +35,22 @@ const Navbar = () => {
                         </>
                     }
 
-
-
-                    {/* daynamic toggle button */}
-
-                    {
-                        user ? <button onClick={hanldeLogOut} className='btn btn-secondary bg-purple-500'>LogOut</button> :
-                            <Link to="/login"><button className="btn bg-purple-500 btn-secondary">Login</button></Link>
-                    }
-
-
                 </div>
                 <div>
                     {
                         user && <div className='tooltip tooltip-left' data-tip={user.displayName}>
                             <img className='w-12 rounded-full' src={user.photoURL} alt="" />
                         </div>
+
+                    }
+
+                    {
+                        user ? <button onClick={hanldeLogOut} className='btn btn-secondary bg-purple-500 ml-3'>LogOut</button> :
+                            <Link to="/login"><button className="btn bg-purple-500 btn-secondary">Login</button></Link>
                     }
                 </div>
             </div>
-         
+
         </div>
     );
 };
