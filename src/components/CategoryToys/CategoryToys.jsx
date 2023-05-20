@@ -8,7 +8,7 @@ const CategoryToys = () => {
     const [toggleState, setToggleState] = useState("teddy");
 
     useEffect( () =>{
-        fetch(`http://localhost:5000/allToys/${toggleState}`)
+        fetch(`http://localhost:5000/categoryToys/${toggleState}`)
         .then(res => res.json())
         .then(data => {
             setToys(data)

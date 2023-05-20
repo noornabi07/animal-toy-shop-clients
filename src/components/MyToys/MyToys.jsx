@@ -1,6 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
 import { Link } from 'react-router-dom';
+import { FaTrash } from 'react-icons/fa';
+import TableRow from '../TableRow/TableRow';
+import Swal from 'sweetalert2';
 
 const MyToys = () => {
     const { user } = useContext(AuthContext)
@@ -14,6 +17,39 @@ const MyToys = () => {
                 setMyToys(data)
             })
     }, [user])
+
+    const handleDelete = id => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+
+                fetch(`http://localhost:5000/allToys/${id}`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.deletedCount > 0) {
+                            Swal.fire(
+                                'Deleted!',
+                                'Your file has been deleted.',
+                                'success'
+                            )
+
+                            const remaining = myToys.filter(toy => toy._id !== id);
+                            setMyToys(remaining)
+                        }
+                    })
+            }
+        })
+    }
 
     return (
         <div className='px-20 my-20'>
@@ -35,24 +71,14 @@ const MyToys = () => {
                     </thead>
                     <tbody>
 
-                        {
-                            myToys.map((toy, index) => <tr
-                                key={toy._id}
-                            >   <td className='text-green-500 font-bold'>{index + 1}</td>
-                                <td>{toy.sellerName}</td>
-                                <td>{toy.toyName}</td>
-                                <td>{toy.subCategory}</td>
-                                <td>{toy.quantity}</td>
-                                <td>
+                       {
 
-                                    <label htmlFor="my-modal" className="btn btn-sm  mt-3 p-2">
-                                        Update
-                                    </label>
-                                </td>
-                                <td>
-                                    <button className="btn btn-sm bg-red-600 mt-3">Delete</button>
-                                </td>
-                            </tr>)
+                            myToys.map((toy, index) => <TableRow
+                                key={toy._id}
+                                toy={toy}
+                                index={index}
+                                handleDelete={handleDelete}
+                            ></TableRow>)
                         }
 
                     </tbody>
@@ -62,33 +88,7 @@ const MyToys = () => {
             {/* modal */}
 
             {/* Put this part before </body> tag */}
-            <input type="checkbox" id="my-modal" className="modal-toggle" />
-            <div className="modal">
-                <div className="modal-box">
-                    <h3 className="font-bold text-xl text-center mb-4 text-teal-600">Update Your Add Toy Info</h3>
-                    <form>
-                        <div>
-                            <div className='flex gap-3 mb-3'>
-                                <div>
-                                    <label className='font-bold text-red-500'>Price</label>
-                                    <input type="text" placeholder="Update Price" className="input input-bordered input-primary w-full max-w-xs" />
-                                </div>
-                                <div>
-                                    <label className='font-bold text-red-500'>Quantity</label>
-                                    <input type="text" placeholder="New Quantity" className="input input-bordered input-primary w-full max-w-xs" />
-                                </div>
-                            </div>
-                            <label className='font-bold text-red-500'>Details</label>
-                            <input type="text" placeholder="Message" className="input input-bordered input-primary w-full" />
-
-                        </div>
-                        <div className="modal-action">
-                            <label htmlFor="my-modal" className="btn">Yay!</label>
-                        </div>
-
-                    </form>
-                </div>
-            </div>
+           
 
         </div>
     );

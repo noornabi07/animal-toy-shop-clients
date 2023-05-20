@@ -5,6 +5,7 @@ const Details = () => {
     const details = useLoaderData();
     const { toyName, sellerName, price, email, message, rating, quantity, photo } = details
     console.log(details)
+    
     return (
         <div className='px-20 my-10 w-3/4 mx-auto'>
             <h2 className='text-center text-3xl font-bold text-purple-500 mb-5'>Details For About: <span className='text-teal-600'>{toyName}</span></h2>
