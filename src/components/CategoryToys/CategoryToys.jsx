@@ -8,7 +8,7 @@ const CategoryToys = () => {
     const [toggleState, setToggleState] = useState("teddy");
 
     useEffect( () =>{
-        fetch(`http://localhost:5000/categoryToys/${toggleState}`)
+        fetch(`https://animal-toys-server-five.vercel.app/categoryToys/${toggleState}`)
         .then(res => res.json())
         .then(data => {
             setToys(data)
