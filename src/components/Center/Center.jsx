@@ -10,13 +10,17 @@ const Center = () => {
     return (
         <div className='lg:px-20 px-4 my-20'>
             <div className='lg:flex items-center justify-between gap-20'>
-                <div className='grid grid-cols-2 gap-4 items-center'>
+                <div className='grid grid-cols-2 gap-4 items-center' data-aos="fade-right"
+                    data-aos-easing="linear"
+                    data-aos-duration="1500">
                     <img className='lg:w-[700px]' src={dainesor} alt="" />
                     <img className='lg:w-[700px]' src={cat} alt="" />
                     <img className='lg:w-[700px]' src={horse} alt="" />
                     <img className='lg:w-[700px]' src={teddy} alt="" />
                 </div>
-                <div className='mt-5 lg:mt-0'>
+                <div className='mt-5 lg:mt-0' data-aos="fade-left"
+                    data-aos-easing="linear"
+                    data-aos-duration="1500">
                     <h4 className='text-xl font-bold text-center lg:text-left text-gray-500'>Quality & Experience</h4>
                     <h2 className='text-5xl my-4 font-bold text-teal-600'><span className='text-orange-600 '>Toys Grooming</span> & Care Center</h2>
                     <p className='text-gray-500  font-semibold mb-5'>Regularly clean the all toys to remove dust and dirt. Use a soft cloth or sponge dampened with mild soapy water. Avoid immersing electronic or battery-operated toys in water.
@@ -40,7 +44,7 @@ const Center = () => {
                     </div>
 
                     <Link to="/allToys">
-                        <button className='bg-slate-800 py-3 mt-3 px-8 text-white font-semibold text-xl rounded-3xl'>See All Toys</button>
+                        <button className='bg-slate-800 hover:bg-teal-600 hover:duration-500 py-3 mt-3 px-8 text-white font-semibold text-xl rounded-3xl'>See All Toys</button>
                     </Link>
                 </div>
             </div>
