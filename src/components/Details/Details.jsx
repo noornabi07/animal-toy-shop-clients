@@ -15,7 +15,7 @@ const Details = () => {
         <div className='px-20 my-10 w-3/4 mx-auto'>
             <h2 className='text-center text-3xl font-bold text-purple-500 mb-5'>Details For About: <span className='text-teal-600'>{toyName}</span></h2>
             <div className="card card-side  border-2 bg-teal-300 border-teal-300 p-5">
-                <figure><img className='w-full h-80 rounded-lg ml-10' src={photo} alt="Movie" /></figure>
+                <figure><img className='rounded-lg ml-10' src={photo} alt="Movie" /></figure>
                 <div className="card-body">
                     <h2><span className="font-semibold text-xl text-orange-500">Seller Name:</span> <span className='text-fuchsia-600 font-semibold'>{sellerName}</span></h2>
                     <h2 ><span className=" font-semibold text-xl text-orange-500">Toy Name:</span> <span className='text-fuchsia-600 font-semibold'>{toyName}</span></h2>

@@ -22,11 +22,11 @@ const Toys = ({ toy }) => {
     return (
         <div>
             <div className="card w-96 bg-teal-500 border-2">
-                <figure className="px-10 pt-10">
-                    <img src={photo} alt="Shoes" className="rounded-xl w-72 h-80 hover:scale-110 hover:duration-500" />
+                <figure className=" pt-5">
+                    <img src={photo} alt="Shoes" className="rounded-xl w-60 h-60 hover:scale-110 hover:duration-500" />
                 </figure>
-                <div className=" pl-10 mb-8 ">
-                    <h2 className="font-bold text-purple-600 text-2xl mt-3">{toyName}</h2>
+                <div className="mx-16 mb-8 ">
+                    <h2 className="font-semibold text-purple-500 mt-3"><span className='text-white'>Name:</span> {toyName}</h2>
                     <div className=''>
                         <div>
                             <p><span className='font-bold text-xl text-white'>Price:</span> <span className='text-lime-400 text-xl font-semibold'>{price}</span></p>

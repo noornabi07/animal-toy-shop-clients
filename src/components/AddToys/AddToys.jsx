@@ -86,6 +86,7 @@ const AddToys = () => {
                                     <option value="teddy">teddy</option>
                                     <option value="hors">hors</option>
                                     <option value="cat">cat</option>
+                                    <option value="dinosaur">dinosaur</option>
                                 </select>
                             </div>
 
