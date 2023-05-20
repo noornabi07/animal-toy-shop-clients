@@ -5,4 +5,3 @@
 * For this I created server site and used mongodb.
 * Each toy is shown, along with their details, in a separate route.
 * I have created a section to add toys, where anyone can add toys by logging into the site.
-
