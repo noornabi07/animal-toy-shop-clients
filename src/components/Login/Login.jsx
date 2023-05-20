@@ -52,7 +52,7 @@ const Login = () => {
 
     return (
         <div>
-            <form onSubmit={handleLogin} className="w-96 mx-auto border-2 mt-10 p-5 rounded-lg">
+            <form onSubmit={handleLogin} className="w-96 mx-auto bg-gray-300 border-2 mb-10 mt-10 p-5 rounded-lg">
 
                 <h3 className='text-2xl font-bold text-purple-700 text-center mb-3'>Login Your Account!!</h3>
 

@@ -7,6 +7,17 @@ const Toys = ({ toy }) => {
     const { user } = useContext(AuthContext)
     const { photo, price, rating, toyName, _id } = toy;
 
+    const notify = () =>{
+        if(!user){
+            Swal.fire(
+                'Not Allow?',
+                'Login First',
+                'question'
+              )
+              return;
+        }
+    }
+
 
     return (
         <div>
@@ -14,21 +25,38 @@ const Toys = ({ toy }) => {
                 <figure className="px-10 pt-10">
                     <img src={photo} alt="Shoes" className="rounded-xl w-72 h-80 hover:scale-110 hover:duration-500" />
                 </figure>
-                <div className=" pl-10 mb-8">
-                    <h2 className="font-bold text-xl mt-3 text-center mb-5 text-red-500"><span className='font-bold text-xl text-white'>Name:</span> {toyName}</h2>
-                    <div className='flex items-center justify-between pr-4'>
+                <div className=" pl-10 mb-8 ">
+                    <h2 className="font-bold text-purple-600 text-2xl mt-3">{toyName}</h2>
+                    <div className=''>
                         <div>
-                            <p><span className='font-bold text-xl text-white'>Price:</span> <span className='text-red-500 text-xl font-semibold'>{price}</span></p>
-                            <p className='mb-4'><span className='font-bold text-xl text-white'>Rating:</span> <span className='text-red-500 font-semibold'>{rating}</span></p>
+                            <p><span className='font-bold text-xl text-white'>Price:</span> <span className='text-lime-400 text-xl font-semibold'>{price}</span></p>
+                            <p className=' flex items-center justify-between px-4'>
+                                <div className="rating -ml-4 mt-2">
+                                    <p className='text-orange-400 mr-4  text-xl  font-bold'>{rating}</p>
+                                    <input type="radio" name="rating-1" className="mask mask-star-2 bg-orange-400" />
+                                    <input type="radio" name="rating-1" className="mask mask-star-2 bg-orange-400" />
+                                    <input type="radio" name="rating-1" className="mask mask-star-2 bg-orange-400" />
+                                    <input type="radio" name="rating-1" className="mask mask-star-2 bg-orange-400" />
+                                    <input type="radio" name="rating-1" className="mask mask-star-2 bg-orange-400" />
+
+                                </div>
+
+
+                                <div className="card-actions">
+                                    <Link to={`/details/${_id}`}>
+                                        <button onClick={notify} className="btn btn-sm">Details</button>
+                                    </Link>
+                                </div>
+                            </p>
+
+
                         </div>
-                        <div className="card-actions">
-                            <Link to="">
-                                <button className="btn btn-primary bg-blue-700	">View Details</button>
-                            </Link>
-                        </div>
+
                     </div>
                 </div>
             </div>
+
+
         </div>
     );
 };

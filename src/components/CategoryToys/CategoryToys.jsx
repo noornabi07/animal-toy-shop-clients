@@ -5,7 +5,7 @@ import Toys from '../Toys/Toys';
 
 const CategoryToys = () => {
     const [toys, setToys] = useState([])
-    const [toggleState, setToggleState] = useState("teddy");
+    const [toggleState, setToggleState] = useState("cat");
 
     useEffect( () =>{
         fetch(`http://localhost:5000/categoryToys/${toggleState}`)
@@ -25,10 +25,10 @@ const CategoryToys = () => {
             <h2 className='text-center font-bold text-teal-600 text-3xl mb-10'>Shop <span className='text-red-500'>Here Category</span> Toys</h2>
             <div className="bloc-tabs">
                 <button
-                    className={toggleState === "teddy" ? "tabs active-tabs text-teal-700 font-bold" : "font-bold text-red-500 tabs"}
-                    onClick={() => toggleTab("teddy")}
+                    className={toggleState === "cat" ? "tabs active-tabs text-teal-700 font-bold" : "font-bold text-red-500 tabs"}
+                    onClick={() => toggleTab("cat")}
                 >
-                    Teddy Bear
+                   Cats
                 </button>
                 <button
                     className={toggleState === "hors" ? "tabs font-bold text-teal-700 active-tabs" : "text-red-500 font-bold tabs"}
@@ -38,10 +38,10 @@ const CategoryToys = () => {
                     Hors
                 </button>
                 <button
-                    className={toggleState === "cat" ? "tabs text-teal-700 font-bold active-tabs" : "tabs text-red-500 font-bold"}
-                    onClick={() => toggleTab("cat")}
+                    className={toggleState === "teddy" ? "tabs text-teal-700 font-bold active-tabs" : "tabs text-red-500 font-bold"}
+                    onClick={() => toggleTab("teddy")}
                 >
-                    Cats
+                    Teddy Bear
                 </button>
             </div>
 
