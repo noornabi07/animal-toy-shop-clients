@@ -21,7 +21,7 @@ const Toys = ({ toy }) => {
 
     return (
         <div>
-            <div className="card w-96 bg-teal-500 border-2">
+            <div className="card lg:w-96 bg-teal-500 border-2">
                 <figure className=" pt-5">
                     <img src={photo} alt="Shoes" className="rounded-xl w-60 h-60 hover:scale-110 hover:duration-500" />
                 </figure>

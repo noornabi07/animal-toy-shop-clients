@@ -14,24 +14,24 @@ import gellary12 from '../../../public/dainesour4.png'
 
 const Gallery = () => {
     return (
-        <div className='px-20 text-center'>
-            <div className='text-center mt-20 mb-20'>
-                <p className='font-bold text-xl'>Because We Really Care About Your Toys</p>
-                <h2 className='text-5xl mt-3 font-bold text-teal-500'><span className='text-red-500'>Our</span> Toys <span className='text-purple-500'>Gallery</span></h2>
+        <div className='lg:px-20 px-4 text-center'>
+            <div className='text-center lg:mt-20 my-10 lg:mb-10'>
+                <p className='font-bold lg:text-xl'>Because We Really Care About Your Toys</p>
+                <h2 className='lg:text-5xl text-2xl mt-3 font-bold text-teal-500'><span className='text-red-500'>Our</span> Toys <span className='text-purple-500'>Gallery</span></h2>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 bg-teal-600 p-8 rounded-lg'>
-                <img className='w-60 h-60 hover:scale-110 hover:duration-500 mx-auto rounded-lg' src={gellary1} alt="" />
-                <img className='w-60 h-60 hover:scale-110 hover:duration-500 mx-auto rounded-lg' src={gellary2} alt="" />
-                <img className='w-60 h-60 hover:scale-110 hover:duration-500 mx-auto rounded-lg' src={gellary3} alt="" />
-                <img className='w-60 h-60 hover:scale-110 hover:duration-500 mx-auto rounded-lg' src={gellary4} alt="" />
-                <img className='w-60 h-60 hover:scale-110 hover:duration-500 mx-auto rounded-lg' src={gellary5} alt="" />
-                <img className='w-60 h-60 hover:scale-110 hover:duration-500 mx-auto rounded-lg' src={gellary7} alt="" />
-                <img className='w-60 h-60 hover:scale-110 hover:duration-500 mx-auto rounded-lg' src={gellary6} alt="" />
-                <img className='w-60 h-60 hover:scale-110 hover:duration-500 mx-auto rounded-lg' src={gellary8} alt="" />
-                <img className='w-60 h-60 hover:scale-110 hover:duration-500 mx-auto rounded-lg' src={gellary9} alt="" />
-                <img className='w-60 h-60 hover:scale-110 hover:duration-500 mx-auto rounded-lg' src={gellary10} alt="" />
-                <img className='w-60 h-60 hover:scale-110 hover:duration-500 mx-auto rounded-lg' src={gellary11} alt="" />
-                <img className='w-60 h-60 hover:scale-110 hover:duration-500 mx-auto rounded-lg' src={gellary12} alt="" />
+                <img className='lg:w-60 lg:h-60 border-2 border-white p-3 hover:scale-110 hover:duration-500 mx-auto rounded-lg' src={gellary1} alt="" />
+                <img className='lg:w-60 lg:h-60 border-2 border-white p-3 hover:scale-110 hover:duration-500 mx-auto rounded-lg' src={gellary2} alt="" />
+                <img className='lg:w-60 lg:h-60 border-2 border-white p-3 hover:scale-110 hover:duration-500 mx-auto rounded-lg' src={gellary3} alt="" />
+                <img className='lg:w-60 lg:h-60 border-2 border-white p-3 hover:scale-110 hover:duration-500 mx-auto rounded-lg' src={gellary4} alt="" />
+                <img className='lg:w-60 lg:h-60 border-2 border-white p-3 hover:scale-110 hover:duration-500 mx-auto rounded-lg' src={gellary5} alt="" />
+                <img className='lg:w-60 lg:h-60 border-2 border-white p-3 hover:scale-110 hover:duration-500 mx-auto rounded-lg' src={gellary7} alt="" />
+                <img className='lg:w-60 lg:h-60 border-2 border-white p-3 hover:scale-110 hover:duration-500 mx-auto rounded-lg' src={gellary6} alt="" />
+                <img className='lg:w-60 lg:h-60 border-2 border-white p-3 hover:scale-110 hover:duration-500 mx-auto rounded-lg' src={gellary8} alt="" />
+                <img className='lg:w-60 lg:h-60 border-2 border-white p-3 hover:scale-110 hover:duration-500 mx-auto rounded-lg' src={gellary9} alt="" />
+                <img className='lg:w-60 lg:h-60 border-2 border-white p-3 hover:scale-110 hover:duration-500 mx-auto rounded-lg' src={gellary10} alt="" />
+                <img className='lg:w-60 lg:h-60 border-2 border-white p-3 hover:scale-110 hover:duration-500 mx-auto rounded-lg' src={gellary11} alt="" />
+                <img className='lg:w-60 lg:h-60 border-2 border-white p-3 hover:scale-110 hover:duration-500 mx-auto rounded-lg' src={gellary12} alt="" />
                 
             </div>
         </div>

@@ -8,16 +8,16 @@ import { Link } from 'react-router-dom';
 
 const Center = () => {
     return (
-        <div className='px-20 my-20'>
-            <div className='flex items-center justify-between gap-20'>
+        <div className='lg:px-20 px-4 my-20'>
+            <div className='lg:flex items-center justify-between gap-20'>
                 <div className='grid grid-cols-2 gap-4 items-center'>
-                    <img className='w-[700px]' src={dainesor} alt="" />
-                    <img className='w-[700px]' src={cat} alt="" />
-                    <img className='w-[700px]' src={horse} alt="" />
-                    <img className='w-[700px]' src={teddy} alt="" />
+                    <img className='lg:w-[700px]' src={dainesor} alt="" />
+                    <img className='lg:w-[700px]' src={cat} alt="" />
+                    <img className='lg:w-[700px]' src={horse} alt="" />
+                    <img className='lg:w-[700px]' src={teddy} alt="" />
                 </div>
-                <div>
-                    <h4 className='text-xl font-bold text-gray-500'>Quality & Experience</h4>
+                <div className='mt-5 lg:mt-0'>
+                    <h4 className='text-xl font-bold text-center lg:text-left text-gray-500'>Quality & Experience</h4>
                     <h2 className='text-5xl my-4 font-bold text-teal-600'><span className='text-orange-600 '>Toys Grooming</span> & Care Center</h2>
                     <p className='text-gray-500  font-semibold mb-5'>Regularly clean the all toys to remove dust and dirt. Use a soft cloth or sponge dampened with mild soapy water. Avoid immersing electronic or battery-operated toys in water.
                         Store all toys in a clean and dry place. Keep them away from direct sunlight, extreme temperatures, or humidity, as these conditions can damage the materials or cause fading.</p>

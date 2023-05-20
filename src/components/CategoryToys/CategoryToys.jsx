@@ -21,7 +21,7 @@ const CategoryToys = () => {
 
 
     return (
-        <div className="px-20 my-32">
+        <div className="lg:px-20 px-4 lg:my-32 my-10">
             <h2 className='text-center font-bold text-teal-600 text-3xl mb-10'>Shop <span className='text-red-500'>Here Category</span> Toys</h2>
             <div className="bloc-tabs">
                 <button
@@ -69,7 +69,7 @@ const CategoryToys = () => {
                 </div>
             </div>
 
-          <div className='grid grid-cols-3 gap-4'>
+          <div className='grid grid-cols-1 lg:grid-cols-3 gap-4'>
             {
                 toys.map(toy => <Toys 
                     key={toy._id}
