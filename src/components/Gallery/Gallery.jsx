@@ -14,7 +14,7 @@ import gellary12 from '../../../public/dainesour4.png'
 
 const Gallery = () => {
     return (
-        <div className='lg:px-20 px-4 text-center'>
+        <div className='lg:px-20 px-4'>
             <div className='text-center lg:mt-20 my-10 lg:mb-10'>
                 <p className='font-bold lg:text-xl text-gray-500' data-aos="fade-right"
                     data-aos-easing="linear"

@@ -96,7 +96,7 @@ const AddToys = () => {
                                 <label className="label">
                                     <span className="font-semibold text-green-600">Toy Prices</span>
                                 </label>
-                                <input type="text" name='price' defaultValue="" className="input input-info input-bordered" placeholder='Enter Your Price' />
+                                <input type="number" name='price' defaultValue="" className="input input-info input-bordered" placeholder='Enter Your Price' />
                             </div>
 
                             <div className="form-control">
