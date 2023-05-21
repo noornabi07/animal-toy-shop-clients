@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+// import useSetTitle from '../../Hook/SetTitle/SetTitle';
 
 const AllToys = () => {
     const [allToys, setAllToys] = useState([]);
@@ -16,13 +17,13 @@ const AllToys = () => {
 
     const handleSearch = () => {
         fetch(`https://animal-toys-server-five.vercel.app/searchByToyName/${search}`)
-        .then(res => res.json())
-        .then(data => {
-            setAllToys(data)
-        })
+            .then(res => res.json())
+            .then(data => {
+                setAllToys(data)
+            })
     }
 
-
+    // useSetTitle('all toys')
     return (
         <div>
             <div className='px-20 my-10'>
@@ -49,10 +50,10 @@ const AllToys = () => {
                         </thead>
                         <tbody>
                             {
-                                allToys.map((toy, index)=> <tr
+                                allToys.map((toy, index) => <tr
                                     key={toy._id}
                                 >
-                                    <td className='text-green-500 font-bold'>{index+1}</td>
+                                    <td className='text-green-500 font-bold'>{index + 1}</td>
                                     <td className='text-purple-500'>{toy.sellerName}</td>
                                     <td>{toy.toyName}</td>
                                     <td>{toy.subCategory}</td>
