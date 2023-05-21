@@ -2,12 +2,14 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
 import TableRow from '../TableRow/TableRow';
 import Swal from 'sweetalert2';
+import useTitle from '../../hooks/useTitle';
 // import useSetTitle from '../../Hook/SetTitle/SetTitle';
 
 
 const MyToys = () => {
     const { user } = useContext(AuthContext)
     const [myToys, setMyToys] = useState([]);
+    useTitle('My Toys')
 
     useEffect(() => {
         fetch(`https://animal-toys-server-five.vercel.app/myToys/${user?.email}`)
