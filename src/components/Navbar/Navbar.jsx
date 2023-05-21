@@ -30,50 +30,6 @@ const Navbar = () => {
 
     return (
         <div className=''>
-            {/* <div className="navbar bg-teal-600	 text-white lg:px-20 lg:flex lg:justify-between items-center">
-                <div>
-                    <img src={logo} className='w-12 rounded-full' alt="" />
-                    <h2 className="text-3xl font-bold ml-3">Animal Toys</h2>
-                </div>
-                <div>
-                    <NavLink to="/" className='px-3 hover:text-purple-700 hover:duration-700 text-xl font-semibold lg:inline  block'>
-                        Home
-                    </NavLink>
-                    <NavLink to="/allToys" className='px-3 hover:text-purple-700 hover:duration-700 text-xl font-semibold lg:inline block'>
-                        All Toys
-                    </NavLink>
-
-                    <NavLink to="/blog" className='px-3 hover:text-purple-700 hover:duration-700 text-xl font-semibold lg:inline  block'>
-                        Blogs
-                    </NavLink>
-
-                    {
-                        user && <>
-                            <NavLink to="/addToys" className='px-3 hover:text-purple-700 hover:duration-700 text-xl font-semibold lg:inline block'>
-                                Add Toys
-                            </NavLink>
-
-                            <NavLink to="/myToys" className='px-3 hover:text-purple-700 hover:duration-700 text-xl font-semibold lg:inline block'>
-                                My Toys
-                            </NavLink>
-                        </>
-                    }
-
-                </div>
-                <div>
-                    {
-                        user && <div className='tooltip tooltip-left' data-tip={user.displayName}>
-                            <img className='w-12 rounded-full' src={user.photoURL} alt="" />
-                        </div>
-
-                    }
-
-                    {
-                        user ? <button onClick={hanldeLogOut} className='btn btn-secondary bg-purple-500 ml-3'>LogOut</button> :
-                            <Link to="/login"><button className="btn bg-purple-500 btn-secondary">Login</button></Link>
-                    }
-                </div>
-            </div> */}
 
             {/*  */}
             <div className="navbar bg-teal-600  lg:mx-auto  lg:px-20 ">
@@ -108,7 +64,7 @@ const Navbar = () => {
                             <Link to='/login' className="navbar-end"><button onClick={hanldeLogOut} className="btn btn-secondary">LogOut</button> </Link>
                         </>
                             : <Link to='/login' className="navbar">
-                                <button className="btn  btn-warning">Login</button>
+                                <button className="font-semibold text-white">Login</button>
                             </Link>
                         }
                     </ul>
